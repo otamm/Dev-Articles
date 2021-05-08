@@ -1,4 +1,4 @@
-# Flutter Install & Setup on Ubuntu
+# Flutter Install & Setup on Ubuntu 16.04+
 
 ## Install & Configure Flutter
 
@@ -29,7 +29,7 @@ Flutter has been installed, however, more is needed to begin development.
 First of all, we need to get the community-backed Open Java Development Kit before being able to use Android Studio. To get the latest stable verion of Java 8 (other versions can sometimes show some unpredictable problems while working alongside Flutter as of May 2021, so I recommend installing OpenJDK 8; don't worry, OpenJDK 8 is set to receive support at least until 2024), open your terminal and run:
 
 ```bash
-sudo apt-get update && sudo apt-get install  sudo apt install openjdk-8-jdk
+sudo apt-get update && sudo apt-get install openjdk-8-jdk
 ```
 
 After a successful installation, it is time to set the ```$JAVA_HOME``` environment variable, used by default by many applications which interact with your local java installation, Android Studio among them.
