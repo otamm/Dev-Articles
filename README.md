@@ -14,7 +14,7 @@ With the `snap` command available, install flutter with:
 sudo snap install flutter --classic
 ```
 
-After flutter has finished installing, run a basic checkup which will also perform some automatic configuring with:
+After flutter has finished installing, run a basic checkup which will also perform some automatic configuring:
 
 ```bash
 flutter doctor -v
@@ -22,7 +22,7 @@ flutter doctor -v
 
 ![flutter doctor output](./images/flutter-doctor.png "flutter doctor output")
 
-Flutter has been installed, however, more is needed to begin development.
+Flutter has been installed, nice!
 
 ## Install & Configure Java
 
@@ -55,11 +55,12 @@ source ~/.bashrc && echo $JAVA_HOME # verifies that the variable was perenially 
 Download Android Studio [here](https://developer.android.com/studio).
 
 After your download finishes, extract the Android Studio package into the `/usr/local/` directory:
+
 ```bash
 sudo tar -C /usr/local -zxvf ~/Downloads/<android_studio_package>.tar.gz
 ```
 
-And after a successful extraction, run Android Studio's installation script:
+After a successful extraction, run Android Studio's installation script:
 
 ```bash
 bash /usr/local/android-studio/bin/studio.sh
@@ -179,6 +180,20 @@ sudo chmod a+r /etc/udev/rules.d/51-android.rules
 
 Reboot your current Linux user session to apply these changes, then open a terminal and run ```adb devices``` again. In case you still have a UDEV-related error, your device's manufacturer ID probably is not listed in ```/etc/udev/rules.d/51-android.rules```; in this case, look the internet for your device's manufacturer UDEV id and manually add it to the rule list in the same format as the others. Notice how the only field with an unique value amongst the rows is ```ATTR{idVendor}```. If you do not receive any error, you'll notice that your device is listed as 'unauthorized'. Let's unlock the device for USB debugging.
 
-In your android device, open up 'Settings', then 'System (or) About Phone'; tap your 'Build number' 5-6 times until a toast telling that 'You are now a developer' pops up. Back to 'Settings > System (or) About Phone', go to the newly unlocked 'Developer Options' entry and check 'USB debugging' just under the 'Debug' section. Plug your Android device in your PC via USB, then run ```adb devices``` on your terminal. The output should list your device and also point it is unlocked for debugging. Now, go back to Android Studio, click on the device dropdown list (the one in which you selected your Virtual Device before) and your physical device should now be listed, select it. Click on the 'run' button and you should see the app in your device, ready to be interacted with.
+## Unlocking Developer Mode & USB Debugging
+
+In your android device, open up 'Settings', then 'About Phone'; tap your 'Build number' 5-6 times until a toast telling that 'You are now a developer!' pops up. 
+
+![You Are Now a Developer](./images/YouAreNowADeveloper.png "You are now a developer!")
+
+Back to 'Settings', open System', you should see that 'Developer Options' were unlocked.  
+
+![Developer Options](./images/DeveloperOptions.png "Developer Options entry")
+
+Tap this new entry check 'USB debugging' just under the 'Debug' section. 
+
+![USB Debugging](./images/USBdebugging.png "USB Debugging")
+
+Plug your Android device in your PC via USB, then run ```adb devices``` on your terminal. The output should list your device and also point it is unlocked for debugging. Now, go back to Android Studio, click on the device dropdown list (the one in which you selected your Virtual Device before) and your physical device should now be listed, select it. Click on the 'run' button and you should see the app in your device, ready to be interacted with.
 
 Congratulations! You are now a Flutter developer. If this article has helped you in any way, please remember to 'clap' Medium's little hands. Good luck on your developer journey!
